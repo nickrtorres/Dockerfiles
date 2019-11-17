@@ -12,7 +12,7 @@ RUN wget -P /tmp \
     http://ftp.gnu.org/gnu/mit-scheme/stable.pkg/10.1.10/${SCHEME_TARBALL}
 
 RUN tar xzvf /tmp/${SCHEME_TARBALL} -C /tmp
-RUN cd /tmp/${SCHEME_INSTALL_DIR}/src &&  \
+RUN cd /tmp/${SCHEME_INSTALL_DIR}/src && \
     ./configure                       && \
     make                              && \
     make install
