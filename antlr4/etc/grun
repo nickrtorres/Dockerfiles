@@ -1,0 +1,23 @@
+#!/bin/sh
+
+set -eu
+
+ANTLR="/usr/local/lib/antlr-4.8-complete.jar"
+GRUN="org.antlr.v4.gui.TestRig"
+
+CMD="java $GRUN"
+
+fatal() {
+    echo "fatal: $*" >&2
+    exit 1
+}
+
+if ! test -f "$ANTLR"; then
+  fatal "cannot find ANTLR .jar. expected to find it here => $ANTLR"
+fi
+
+if ! command -v java; then
+  fatal "cannot find java"
+fi
+
+eval "$CMD"
