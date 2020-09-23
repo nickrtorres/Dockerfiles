@@ -1,7 +1,7 @@
 FROM ubuntu:latest
 
-RUN apt update -y && apt upgrade -y && apt update -y
-RUN apt install -y default-jdk unzip wget
+RUN apt update -y && apt upgrade -y && apt update -y --fix-missing
+RUN apt install -y openjdk-14-jdk unzip wget
 
 RUN mkdir /opt/gradle
 RUN cd /tmp && wget https://services.gradle.org/distributions/gradle-6.6.1-bin.zip && \

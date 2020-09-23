@@ -3,7 +3,7 @@
 set -eu
 
 ANTLR="/usr/local/lib/antlr-4.8-complete.jar"
-CMD="java -jar $ANTLR"
+CMD="java -jar $ANTLR $*"
 
 fatal() {
     echo "fatal: $*" >&2
